@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML FORM</title>
+</head>
+<body>
+<fieldset>
+<legend>Contact information:</legend>
+    <form method="post" action="action.php">
+    <!--Action.php was made for testing the inputfields-->
+    <table>
+        <tr>
+            <td><label for="fname">First name:</label></td>
+            <td><input type="text" id="fname" name="fname" placeholder="First name"></td>
+            <td><label>Preferred contact method:</label></td>
+        </tr>
+        <tr>
+            <td><label for="lname">Last name:</label></td>
+            <td><input type="text" id="lname" name="lname" placeholder="Last name"></td>
+            
+        </tr>
+        <tr>
+            <td><label for="email">Email:</label></td>
+            <td><input type="text" id="email" name="email" placeholder="Email"></td>
+            <td><input type="checkbox" id="preferredEmail" name="preferredEmail"> Email</td>
+            
+        </tr>
+        <tr>
+            <td><label for="phonenumber">Telephone:</label></td>
+            <td><input type="text" id="phonenumber" name="phonenumber" placeholder="Telephone"></td>
+            <td><input type="checkbox" id="preferredPhone" name="preferredPhone"> Telephone</td>
+        </tr>
+    </table>
+</fieldset>
+<fieldset>
+<legend>Feedback: </legend>
+    <table>
+        <tr>
+            <td>
+                <label for="messagesubject">Message subject: </label>
+                <input type="text" id="messagesubject" name="messagesubject" placeholder="Message subject">
+            </td>
+        </tr>
+        <tr>
+            <td><textarea name="message" id="message" cols="50" rows="15"></textarea></td>
+        </tr>
+        <tr>
+            <td><label for="fileInput">Attach a file: </label><input name="fileInput" id="fileInput" type="file"></td>
+        </tr>
+        <td><hr size="2" color="grey"></td>
+        <tr>
+            <td><input type="submit" id="submit" name="submit" value="Send"></td>
+        </tr>
+    </table>
+</fieldset>
+</form>
+</body>
+</html>
