@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        body, html, h1 ,ul, h2, p, h3{
+            margin: 0;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            max-width: 50%;
+            padding: 0 25% 0 25%;
+            background-color: #F5EFE6;
+        }
+        h3 {
+            text-align: center;
+            padding: 0.5em;
+        }
+        /*HEADER STARTS*/
+        li {
+            list-style: none;
+        }
+        header {
+            border: 1px solid #7895B2;
+            border-top:  none;
+            background-color: #AEBDCA;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        nav ul{
+            display: flex;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        header nav ul li a {
+            padding: 1.2em;
+            background-color: #AEBDCA;
+        }
+        nav ul li a:hover {
+            background-color: #7895B2;
+        }
+        header h1 {
+            padding: 0.25em 0 0.25em 0.5em;
+        }
+        /*HEADER ENDS*/
+
+        /*MAIN CONTENT STARTS*/
+        #content {
+            background-color: #F5EFE6;
+            border-left: #7895B2 1px solid;
+            border-right: #7895B2 1px solid;
+        }
+        .flex_first {
+            display: flex;
+            flex-direction: row;
+            border-bottom: 1px solid #7895B2; 
+            justify-content: space-between;
+        }
+        .flex_first div {
+            width: 140px;
+            height: 80px;
+            margin: 1em;
+            border-radius: 5px;
+            background-color: rgb(193, 222, 255);
+        }
+        /*FIRST END*/
+
+        .flex_second {
+            display: flex;
+            flex-direction: row;
+            border-bottom: 1px solid #7895B2; 
+            justify-content: center;
+        }
+        .flex_second div {
+            width: 140px;
+            height: 80px;
+            margin: 1em;
+            border-radius: 5px;
+            background-color: rgb(193, 222, 255);
+        }
+
+        /*SECOND END*/
+
+        .flex_third {
+            display: flex;
+            flex-direction: row;
+            border-bottom: 1px solid #7895B2; 
+        }
+        .flex_third2 {
+            flex-grow: 2;
+        }
+        .flex_third div {
+            width: 140px;
+            height: 80px;
+            margin: 1em;
+            border-radius: 5px;
+            background-color: rgb(193, 222, 255);
+        }
+        /*THIRD END*/    
+
+        .flex_fourth {
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid #7895B2; 
+        }
+        .flex_fourth div {
+            width: 140px;
+            height: 80px;
+            margin: 1em;
+            border-radius: 5px;
+            background-color: rgb(193, 222, 255);
+        }
+        .flex_fourth1 {
+            align-self: start;
+        }
+        .flex_fourth2 {
+            align-self: center;
+        }
+        .flex_fourth3 {
+            align-self: end;
+        }
+
+        /*FOURTH END*/
+
+        .flex_fifth {
+            display: flex;
+            flex-direction: row;
+            border-bottom: 1px solid #7895B2; 
+            flex-wrap: wrap;
+        }
+        .flex_fifth div {
+            width: 140px;
+            height: 80px;
+            margin: 1em;
+            border-radius: 5px;
+            background-color: rgb(193, 222, 255);
+        }
+        /*MAIN CONTENT ENDS*/
+
+        /*FOOTER STARTS*/
+        footer {
+            background-color: #AEBDCA;
+            border: 1px solid #7895B2;
+        }
+        footer p {
+            padding: 1em;
+        }
+        /*FOOTER ENDS*/
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Flex demonstration</h1>
+        <nav>
+            <ul>
+                <li class="home"><a>Home</a></li>
+                <li class="projects"><a>Projects</a></li>
+                <li class="skills"><a>Skills</a></li>
+                <li class="experience"><a>Experience</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="content">
+        <h3>Made with justify-content: space-between; to give space between the elements</h3>
+        <div class="flex_first">
+            <div class="flex_first1"></div>
+            <div class="flex_first2"></div>
+            <div class="flex_first3"></div>
+        </div>
+        <h3>Made with justify-content: center; to center all of the elements</h3>
+        <div class="flex_second">
+            <div class="flex_second1"></div>
+            <div class="flex_second2"></div>
+            <div class="flex_second3"></div>
+        </div>
+        <h3>Made with flex-grow: 2; on the middle element to make it occupy all of the free space</h3>
+        <div class="flex_third">
+            <div class="flex_third1"></div>
+            <div class="flex_third2"></div>
+            <div class="flex_third3"></div>
+        </div>
+        <h3>Made with align-self: start/center/end; to align elements to their correct positions and <br>flex-direction: column; to give them their own columns.</h3>
+        <div class="flex_fourth">
+            <div class="flex_fourth1"></div>
+            <div class="flex_fourth2"></div>
+            <div class="flex_fourth3"></div>
+        </div>
+        <h3>Made with flex-wrap: wrap; to prevent crushing of the elements <br>without flex-wrap the elements would be crushed and on the same line</h3>
+        <div class="flex_fifth">
+            <div class="flex_fifth1"></div>
+            <div class="flex_fifth2"></div>
+            <div class="flex_fifth3"></div>
+            <div class="flex_fifth4"></div>
+            <div class="flex_fifth5"></div>
+            <div class="flex_fifth6"></div>
+            <div class="flex_fifth7"></div>
+            <div class="flex_fifth8"></div>
+            <div class="flex_fifth9"></div>
+            <div class="flex_fifth10"></div>
+            <div class="flex_fifth11"></div>
+            <div class="flex_fifth12"></div>
+        </div>
+    </div>
+    <footer>
+        <p>Email: olli.soderberg@student.lab.fi</p>
+    </footer>
+</body>
+</html>
