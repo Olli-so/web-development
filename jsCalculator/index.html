@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-content: space-between;
+            
+        }
+        .first {
+            padding: 1em;
+            flex: 1 1 0;
+            background-color: lightblue;
+            border:1px solid rgb(126, 190, 211);
+        }
+        .second {
+            padding: 1em;
+            flex: 1 1 0;
+            background-color: beige;
+            border-bottom: 1px solid rgb(212, 212, 140);
+        }
+        .third {
+            padding: 1em;
+            flex: 1 1 0;
+            background-color: lightblue;
+            border:1px solid rgb(126, 190, 211);
+        }
+        body {
+            margin:0;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="first">
+        <h2>Calculator with text box and dropdown list</h2>
+        <form id="first" >
+            <input type="text" id="num11" name="num11">
+            <select name="operator" id="operator1">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <input type="text" id="num12" name="num12">
+            <input type="button" id="submit1" value="=">
+            <b id="result1">Press = mark!</b>
+        </form>
+    </div>
+    <div class="second">
+        <h2>Calculator with text box and option buttons</h2>
+        <form id="second">
+            <input type="text" id="num21" name="num21">
+            <br>
+            <input type="radio" id="+" name="operator2" value="+"><label for="+">Addition</label><br>
+            <input type="radio" name="operator2" id="-"><label for="-">Subtraction</label><br>
+            <input type="radio" name="operator2" id="*"><label for="*">Multiplication</label><br>
+            <input type="radio" name="operator2" id="/"><label for="/">Distribution</label><br>
+            <input type="text" id="num22" name="num22">
+            <input type="button" id="submit2" value="=">
+            <b id="result2">Press = mark!</b>
+        </form>
+    </div>
+    <div class="third">
+        <h2>Calculator with text box and increment/decrement buttons</h2>
+        <form id="third" onsubmit="return false">
+            <input type="number" id="num31" name="num31" value="0" step="1">
+            <button onclick="increase1()">+</button>
+            <button onclick="decrease1()">-</button>
+            <select name="operator" id="operator3">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <input id="num32" type="number" name="num32" value="0"/>
+            <button onclick="increase2()">+</button>
+            <button onclick="decrease2()">-</button>
+            <input type="button" id="submit3" value="=">
+            <b id="result3">Press = mark!</b>
+        </form>
+        
+        
+    </div>
+</div>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
