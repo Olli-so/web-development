@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop tasks with JavaScript</title>
+    <style>
+        .main {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content:space-around;
+            margin: 0 14% 0 14%;
+        }
+        .main > * {
+            width: 15em;
+            padding:1em;
+            background-color: beige;
+            border: 1px solid rgb(228, 228, 146);
+        }
+        h3 {
+            margin: 0.5em 0 0.5em 0;
+        }
+        body{
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div>
+            <h3>Factorial</h3>
+            <label for="factorial">Input: </label><input name="factorial" id="factorial" type="text" size="1">
+            <br>
+            <input type="button" onclick="factorial()" value="="> <span id="error1" style="color:red;"></span>
+            <br>
+            <label for="factorialResult">Result: </label><input name="factorialResult" id="factorialResult" readonly size="5">
+        </div>
+        <div>
+            <h3>Addition</h3>
+            <label for="addition">Input: </label><input name="addition" id="addition" type="text" size="1">
+            <br>
+            <input type="button" onclick="addition()" value="="> <span id="error2" style="color:red;"></span>
+            <br>
+            <label for="additionResult">Result: </label><input name="additionResult" id="additionResult" readonly size="5">
+        </div>
+        <div>
+            <h3>Even and Odd sum</h3>
+            <label for="evenodd">Input: </label><input name="evenodd" id="evenodd" type="text" size="1">
+            <br>
+            <input type="button" onclick="evenodd()" value="="> <span id="error3" style="color:red;"></span>
+            <br>
+            <label for="evenResult">Sum of <b>even</b>: </label><input name="evenResult" id="evenResult" readonly size="5">
+            <br>
+            <label for="oddResult">Sum of <b>odd</b>: </label><input name="oddResult" id="oddResult" readonly size="5">
+        </div>
+    </div>
+<script>
+    const errormsg = "Input less than 1, try again"
+    function factorial() {
+        let result = 1
+        let error = document.getElementById("error1")
+        
+        let input = document.getElementById("factorial").value
+        if (input >= 1) {
+            for (let i = input; i != 0; i--) {
+                result *= i
+                console.log(result)
+            }
+            error.innerHTML = ""
+            document.getElementById("factorialResult").value = result
+        } else {
+            error.innerHTML = errormsg
+        }
+    }
+    function addition() {
+        let result = 0
+        let error = document.getElementById("error2")
+        
+        let input = document.getElementById("addition").value
+        if (input >= 1) {
+            for (let i = 0; i <= input; i++) {
+                result += i
+                console.log(result)
+            }
+            error.innerHTML = ""
+            document.getElementById("additionResult").value = result
+        } else {
+            error.innerHTML = errormsg
+        }
+    }
+    function evenodd() {
+        let evenResult = 0
+        let oddResult = 0
+        let error = document.getElementById("error3")
+        let input = document.getElementById("evenodd").value
+        if (input >= 1) {
+            for (let i = 0; i <= input; i++) {
+                if (i%2==0) {
+                    evenResult+=i
+                } else if (i%2==1) {
+                    oddResult+=i
+                } else {
+                    console.log(i)
+                }
+            }
+            error.innerHTML = ""
+            document.getElementById("evenResult").value = evenResult
+            document.getElementById("oddResult").value = oddResult
+        } else {
+            error.innerHTML = errormsg
+        }
+    }
+</script>
+</body>
+</html>
