@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String handling with JavaScript</title>
+    <style>
+        .main {
+            display: flex;
+            justify-content: space-around;
+        }
+        body {
+            margin: 0;
+        }
+        .main > * {
+            flex-basis: 350px;
+            flex-wrap: wrap;
+            background-color: beige;
+            border: 1px solid rgb(212, 212, 148);
+            padding: 1em 3em 3em 3em;
+        }
+        input {
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div>
+            <h2>Task 1 - "L" in a phrase</h2>
+            <input type="text" name="task1" id="task1">
+            <br>
+            <input type="button" value="Submit" onclick="task1()">
+            <br>
+            <span id="result1"> </span>
+        </div>
+        <div>
+            <h2>Task 2 - Vowels in a phrase</h2>
+            <input type="text" name="task2" id="task2">
+            <br>
+            <input type="button" value="Submit" onclick="task2()">
+            <br>
+            <span id="result2"> </span>
+        </div>
+        <div>
+            <h2>Task 3 - Palindrome</h2>
+            <input type="text" name="task3" id="task3">
+            <br>
+            <input type="button" value="Submit" onclick="task3()">
+            <br>
+            <span id="result3"></span>
+        </div>
+    </div>
+<script>
+    function task1() {
+        count = 0
+        let input = document.getElementById("task1").value
+        for (let i = 0; i < input.length; i++) {
+            if (input[i].toLowerCase() == "l") {
+                count++;
+                console.log(count)
+            } 
+        }
+        document.getElementById("result1").innerHTML = `<b>${input}</b> contains ${count}xL characters`
+    }
+    function task2() {
+        let count = 0;
+        let vowels = ["a", "e", "i", "o", "u", "y", "ä", "ö", "å"];
+        let input = document.getElementById("task2").value;
+        for (let char of input) {
+            if(vowels.includes(char)) {
+                count++;
+            }
+        }
+        document.getElementById("result2").innerHTML = `<b>${input}</b> contains ${count} vowels.`
+
+    }
+    function task3() {
+        let palindrome = "";
+        let result = document.getElementById("result3");
+        let input = document.getElementById("task3").value;
+        for (let i = input.length; i > 0; i--) {
+            palindrome += input[i-1];
+        }
+        if (palindrome.toLowerCase() == input.toLowerCase()) {
+            result.innerHTML = `<b>${input}</b> is palindrome.`;
+        } else {
+            result.innerHTML = `<b>${input}</b> is NOT palindrome.`;
+        }
+    //    
+
+    }
+</script>
+</body>
+</html>
